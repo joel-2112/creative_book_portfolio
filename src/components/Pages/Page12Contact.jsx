@@ -152,7 +152,6 @@ export function Page12Contact() {
             onClick={triggerConfetti}
             className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-ui font-bold text-xs sm:text-sm rounded-xl shadow-md active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
           >
-            <Sparkles size={15} />
             <span>SAY HELLO! 🎉</span>
           </button>
         </div>
