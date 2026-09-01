@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper-base: #FAF7EE;
+    --paper-texture: #F4EFE0;
+    --paper-line: rgba(59, 130, 246, 0.12);
+    --paper-margin-line: rgba(239, 68, 68, 0.25);
+    --ink-black: #1E232A;
+    --ink-blue: #0284C7;
+    --ink-cyan: #00A3E0;
+    --ink-red: #DC2626;
+    --desk-wood: #211B17;
+  }
+
+  body {
+    background-color: #1A1715;
+    color: #1E232A;
+    font-family: 'Patrick Hand', 'Caveat', cursive, system-ui;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-hand {
+  font-family: 'Patrick Hand', cursive, sans-serif;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.font-kalam {
+  font-family: 'Kalam', cursive, sans-serif;
+}
+
+.font-marker {
+  font-family: 'Gloria Hallelujah', 'Covered By Your Grace', cursive, sans-serif;
+}
+
+.font-code {
+  font-family: 'Fira Code', monospace;
+}
+
+.font-ui {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Paper Background Variations */
+.paper-ruled {
+  background-color: var(--paper-base);
+  background-image: 
+    linear-gradient(90deg, transparent 52px, var(--paper-margin-line) 52px, var(--paper-margin-line) 54px, transparent 54px),
+    repeating-linear-gradient(transparent, transparent 27px, var(--paper-line) 27px, var(--paper-line) 28px);
+  background-size: 100% 100%, 100% 28px;
+}
+
+.paper-grid {
+  background-color: var(--paper-base);
+  background-image: 
+    linear-gradient(rgba(14, 116, 144, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 116, 144, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.paper-dots {
+  background-color: var(--paper-base);
+  background-image: radial-gradient(rgba(30, 41, 59, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.paper-plain {
+  background-color: var(--paper-base);
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(244, 239, 224, 0.6));
+}
+
+/* 3D Book & Page Physics */
+.book-stage {
+  perspective: 2400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Organic Hand-Drawn Borders (Controlled Imperfection) */
+.sketch-border {
+  border: 2px solid #2B323D;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.sketch-border-sm {
+  border: 1.5px solid #2B323D;
+  border-radius: 180px 10px 160px 10px / 10px 160px 10px 180px;
+}
+
+.sketch-border-blue {
+  border: 2px solid #0284C7;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.sketch-border-dashed {
+  border: 2px dashed #0284C7;
+  border-radius: 180px 12px 170px 12px / 12px 170px 12px 180px;
+}
+
+/* Washi Tape Effect */
+.washi-tape {
+  background: rgba(254, 240, 138, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1px);
+  position: relative;
+}
+
+.washi-tape::before,
+.washi-tape::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: inherit;
+}
+
+.washi-tape::before {
+  left: -4px;
+  clip-path: polygon(100% 0, 0 15%, 100% 30%, 0 45%, 100% 60%, 0 75%, 100% 90%, 0 100%);
+}
+
+.washi-tape::after {
+  right: -4px;
+  clip-path: polygon(0 0, 100% 15%, 0 30%, 100% 45%, 0 60%, 100% 75%, 0 90%, 100% 100%);
+}
+
+.washi-tape-cyan {
+  background: rgba(186, 230, 253, 0.75);
+}
+
+.washi-tape-rose {
+  background: rgba(254, 205, 211, 0.75);
+}
+
+.washi-tape-translucent {
+  background: rgba(255, 255, 255, 0.65);
+  border-left: 1px dashed rgba(0, 0, 0, 0.1);
+  border-right: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky Note Shadow & Curl */
+.sticky-shadow {
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.12), 
+    0 4px 10px rgba(0,0,0,0.1),
+    -1px 8px 14px rgba(0,0,0,0.08);
+}
+
+/* Highlighting Marker Effect */
+.highlight-cyan {
+  background: linear-gradient(104deg, rgba(56, 189, 248, 0) 0.9%, rgba(56, 189, 248, 0.35) 2.4%, rgba(56, 189, 248, 0.4) 95%, rgba(56, 189, 248, 0) 98%);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight-yellow {
+  background: linear-gradient(104deg, rgba(250, 204, 21, 0) 0.9%, rgba(250, 204, 21, 0.4) 2.4%, rgba(250, 204, 21, 0.45) 95%, rgba(250, 204, 21, 0) 98%);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight-pink {
+  background: linear-gradient(104deg, rgba(244, 114, 182, 0) 0.9%, rgba(244, 114, 182, 0.35) 2.4%, rgba(244, 114, 182, 0.4) 95%, rgba(244, 114, 182, 0) 98%);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Spiral Ring Styles */
+.spiral-ring {
+  background: linear-gradient(180deg, #A1A1AA 0%, #F4F4F5 30%, #71717A 70%, #3F3F46 100%);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hole-punch {
+  background: radial-gradient(circle, #1F1B18 60%, rgba(31, 27, 24, 0.3) 100%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Page Thickness Layering (Stack Effect) */
+.page-stack-right {
+  box-shadow: 
+    1px 0 0 #ECE6D5,
+    2px 1px 0 #E2DCB4,
+    3px 1px 0 #FAF7EE,
+    4px 2px 0 #E5DFCE,
+    5px 2px 0 #FAF7EE,
+    7px 3px 0 #DDD7C5,
+    9px 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.page-stack-left {
+  box-shadow: 
+    -1px 0 0 #ECE6D5,
+    -2px 1px 0 #E2DCB4,
+    -3px 1px 0 #FAF7EE,
+    -4px 2px 0 #E5DFCE,
+    -5px 2px 0 #FAF7EE,
+    -7px 3px 0 #DDD7C5,
+    -9px 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Custom Scrollbar inside pages if needed */
+.notebook-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.notebook-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notebook-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 3px;
+}
+.notebook-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .paper-ruled {
+    background-size: 100% 100%, 100% 24px;
+  }
+}
