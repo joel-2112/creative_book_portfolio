@@ -93,11 +93,11 @@ export function Book({
       onTouchMove={onDrag}
       onMouseUp={stopDrag}
       onTouchEnd={stopDrag}
-      className="book-stage relative w-full max-w-5xl mx-auto flex items-center justify-center my-auto min-h-[580px] sm:min-h-[640px] px-2 sm:px-4 py-4 select-none"
+      className="book-stage relative w-full h-full max-w-5xl mx-auto flex items-center justify-center select-none p-1 sm:p-2 md:p-3 overflow-hidden"
     >
       {/* Closed Book Hardcover View */}
       <div
-        className={`relative w-full max-w-lg aspect-3/4 sm:aspect-4/5 rounded-2xl shadow-2xl transition-all duration-700 ease-out preserve-3d ${
+        className={`relative w-full max-w-sm sm:max-w-md md:max-w-lg h-full max-h-[620px] aspect-[3/4.2] rounded-xl sm:rounded-2xl shadow-2xl transition-all duration-700 ease-out preserve-3d ${
           isOpen ? 'hidden' : 'block'
         }`}
       >
@@ -107,10 +107,8 @@ export function Book({
       {/* Opened Book View */}
       {isOpen && (
         <div
-          className={`relative w-full rounded-2xl shadow-2xl bg-[#FAF7EE] border-4 border-[#2A231D] preserve-3d transition-all duration-500 overflow-hidden flex ${
-            isSpread
-              ? 'max-w-5xl h-[620px] sm:h-[680px]'
-              : 'max-w-lg h-[620px] sm:h-[680px]'
+          className={`relative w-full h-full max-h-[720px] rounded-xl sm:rounded-2xl shadow-2xl bg-[#FAF7EE] border-2 sm:border-4 border-[#2A231D] preserve-3d transition-all duration-500 overflow-hidden flex ${
+            isSpread ? 'max-w-5xl' : 'max-w-xl'
           }`}
         >
           {/* Left Side Page Stack Edge */}
@@ -129,10 +127,10 @@ export function Book({
               <div
                 onMouseDown={(e) => startDrag(e, 'left', bookRef.current)}
                 onTouchStart={(e) => startDrag(e, 'left', bookRef.current)}
-                className="absolute bottom-0 left-0 w-16 h-16 z-30 cursor-grab active:cursor-grabbing flex items-end justify-start p-2 group"
+                className="absolute bottom-0 left-0 w-12 sm:w-16 h-12 sm:h-16 z-30 cursor-grab active:cursor-grabbing flex items-end justify-start p-1.5 sm:p-2 group"
                 title="Drag or click to flip backward"
               >
-                <div className="w-8 h-8 bg-zinc-400/20 rounded-tr-xl border-t border-r border-zinc-500/40 group-hover:bg-zinc-400/40 transition-colors pointer-events-none"></div>
+                <div className="w-6 sm:w-8 h-6 sm:h-8 bg-zinc-400/20 rounded-tr-xl border-t border-r border-zinc-500/40 group-hover:bg-zinc-400/40 transition-colors pointer-events-none"></div>
               </div>
             )}
           </div>
@@ -152,7 +150,7 @@ export function Book({
               {rightPageNum <= totalPages ? (
                 renderPage(rightPageNum)
               ) : (
-                <div className="w-full h-full p-8 flex items-center justify-center paper-dots text-zinc-400 font-script text-xl">
+                <div className="w-full h-full p-6 sm:p-8 flex items-center justify-center paper-dots text-zinc-400 font-script text-lg sm:text-xl">
                   <span>(Blank Notebook Page)</span>
                 </div>
               )}
@@ -162,10 +160,10 @@ export function Book({
                 <div
                   onMouseDown={(e) => startDrag(e, 'right', bookRef.current)}
                   onTouchStart={(e) => startDrag(e, 'right', bookRef.current)}
-                  className="absolute bottom-0 right-0 w-16 h-16 z-30 cursor-grab active:cursor-grabbing flex items-end justify-end p-2 group"
+                  className="absolute bottom-0 right-0 w-12 sm:w-16 h-12 sm:h-16 z-30 cursor-grab active:cursor-grabbing flex items-end justify-end p-1.5 sm:p-2 group"
                   title="Drag or click to flip forward"
                 >
-                  <div className="w-8 h-8 bg-zinc-400/20 rounded-tl-xl border-t border-l border-zinc-500/40 group-hover:bg-zinc-400/40 transition-colors pointer-events-none"></div>
+                  <div className="w-6 sm:w-8 h-6 sm:h-8 bg-zinc-400/20 rounded-tl-xl border-t border-l border-zinc-500/40 group-hover:bg-zinc-400/40 transition-colors pointer-events-none"></div>
                 </div>
               )}
             </div>
