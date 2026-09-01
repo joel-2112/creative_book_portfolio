@@ -1,5 +1,6 @@
 import React from 'react';
 import { Volume2, VolumeX, BookOpen, FileText, List, RotateCcw } from 'lucide-react';
+import profileImg from '../../assets/profile.jpg';
 
 export function BookNavHeader({
   soundEnabled,
@@ -13,9 +14,13 @@ export function BookNavHeader({
   return (
     <header className="w-full max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between gap-2 text-white z-30 select-none">
       {/* Left Logo / Branding */}
-      <div className="flex items-center gap-2 min-w-0">
-        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-marker text-base sm:text-lg shrink-0">
-          E
+      <div className="flex items-center gap-2.5 min-w-0">
+        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-amber-400/80 shadow-md shrink-0 ring-2 ring-amber-500/30 bg-zinc-900">
+          <img
+            src={profileImg}
+            alt="Eyuel Kassahun"
+            className="w-full h-full object-cover object-[center_18%]"
+          />
         </div>
         <div className="min-w-0 truncate">
           <h1 className="font-marker text-sm sm:text-base md:text-lg text-amber-100 leading-tight truncate">

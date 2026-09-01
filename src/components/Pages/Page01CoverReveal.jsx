@@ -26,7 +26,6 @@ export function Page01CoverReveal({ onNextPage }) {
       <div className="my-auto py-2.5 sm:py-4 space-y-3 sm:space-y-4">
         <div className="space-y-1">
           <div className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-amber-100 border border-amber-300 rounded-full font-hand text-[10px] sm:text-xs text-amber-900">
-            <Sparkles size={11} className="text-amber-600" />
             <span>Engineering Notebook • Entry #01</span>
           </div>
 

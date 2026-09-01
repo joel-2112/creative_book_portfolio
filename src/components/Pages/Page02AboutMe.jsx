@@ -4,6 +4,7 @@ import { PhotoTape } from '../UI/PhotoTape';
 import { HighlightText } from '../UI/HighlightText';
 import { EthiopianMotif, LightbulbDoodle } from '../UI/HandDrawnDoodles';
 import { CheckCircle2 } from 'lucide-react';
+import profileImg from '../../assets/profile.jpg';
 
 export function Page02AboutMe() {
   return (
@@ -39,11 +40,12 @@ export function Page02AboutMe() {
           {/* Polaroid Photo with Washi Tape */}
           <div className="sm:col-span-5 flex justify-center">
             <PhotoTape
-              src=""
+              src={profileImg}
               alt="Eyuel Kassahun"
               caption="Eyuel • Software Eng"
               rotation="-2deg"
               tapeColor="cyan"
+              aspectRatio="aspect-square sm:aspect-4/3"
               className="w-36 sm:w-44 md:w-52"
             />
           </div>

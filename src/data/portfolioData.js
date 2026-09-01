@@ -22,6 +22,7 @@ export const portfolioData = {
     availability: "Available for Full-Stack, Backend & Contract Engineering Roles",
     statusBadge: "🚀 Open for Opportunities",
     currentFocus: "High-concurrency Go services, Event-driven architectures (Kafka/Redis BullMQ), and Next.js/React ecosystems.",
+    profileImage: "/profile.jpg",
     stats: [
       { label: "Years Experience", value: "3+" },
       { label: "Production Apps", value: "15+" },

@@ -4,6 +4,7 @@ import { EthiopianMotif } from '../UI/HandDrawnDoodles';
 import { GithubIcon, LinkedinIcon } from '../UI/BrandIcons';
 import { Mail, Send, Sparkles, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import profileImg from '../../assets/profile.jpg';
 
 export function Page12Contact() {
   const [copied, setCopied] = useState(false);
@@ -143,9 +144,18 @@ export function Page12Contact() {
 
         {/* Hand-Signed Closing */}
         <div className="pt-1.5 flex items-center justify-between flex-wrap gap-2">
-          <div className="font-script text-base sm:text-xl md:text-2xl text-zinc-800 leading-tight">
-            <p>"Thanks for reading my notebook."</p>
-            <p className="font-marker text-lg sm:text-2xl text-sky-700 mt-0.5">— Eyuel Kassahun</p>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-zinc-800 shadow-xs ring-2 ring-sky-300/60 shrink-0">
+              <img
+                src={profileImg}
+                alt="Eyuel Kassahun"
+                className="w-full h-full object-cover object-[center_18%]"
+              />
+            </div>
+            <div className="font-script text-base sm:text-xl md:text-2xl text-zinc-800 leading-tight">
+              <p>"Thanks for reading my notebook."</p>
+              <p className="font-marker text-lg sm:text-2xl text-sky-700 mt-0.5">— Eyuel Kassahun</p>
+            </div>
           </div>
 
           <button

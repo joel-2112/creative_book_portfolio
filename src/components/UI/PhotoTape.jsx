@@ -6,7 +6,9 @@ export function PhotoTape({
   caption = '',
   rotation = '2deg',
   tapeColor = 'cyan', // 'cyan' | 'yellow' | 'rose' | 'translucent'
-  className = ''
+  className = '',
+  imgClassName = '',
+  aspectRatio = 'aspect-4/3'
 }) {
   const tapeColorMap = {
     cyan: 'washi-tape-cyan',
@@ -26,9 +28,13 @@ export function PhotoTape({
       ></div>
 
       {/* Image Container */}
-      <div className="w-full bg-zinc-100 overflow-hidden rounded-xs border border-zinc-200/50 aspect-4/3 flex items-center justify-center">
+      <div className={`w-full bg-zinc-100 overflow-hidden rounded-xs border border-zinc-200/50 ${aspectRatio} flex items-center justify-center`}>
         {src ? (
-          <img src={src} alt={alt} className="w-full h-full object-cover grayscale-[15%] contrast-105" />
+          <img
+            src={src}
+            alt={alt}
+            className={`w-full h-full object-cover object-[center_18%] contrast-105 hover:contrast-100 transition-all ${imgClassName}`}
+          />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 text-zinc-400">
             <span className="text-3xl mb-1">📷</span>
